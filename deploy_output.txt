@@ -1,0 +1,7 @@
+[ec2-user@ip-172-31-35-237 tmp]$ kubectl create deployment nginx --image=nginx
+deployment.apps/nginx created
+[ec2-user@ip-172-31-35-237 tmp]$ kubectl get deployments
+NAME    READY   UP-TO-DATE   AVAILABLE   AGE
+nginx   1/1     1            1           11s
+[ec2-user@ip-172-31-35-237 tmp]$ kubectl expose deployment nginx --type=LoadBalancer --name=nginx-service --port=80 --target-port=80
+service/nginx-service exposed
